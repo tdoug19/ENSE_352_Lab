@@ -22,6 +22,8 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 - Efficient processor core, system and memories
 - Ultra-low power consumption with integrated sleep mode and an optional deep sleep mode.
 
+
+
 ### Our Board - Nucleo-F103RB
 
 <table>
@@ -34,10 +36,36 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
         <li>16kB SRAM</li>
         <li>Documentation available on the GitHub site</li>
     </td>
-    <td> <img src="Nucleo.png"  alt="1" width = 279px height = 336px ></td>
+    <td> <img src="Nucleo.png"  alt="Nucleo" width = 279px height = 336px ></td>
   </tr>
 </table>
 
+
+### Block Diagram
+<table>
+  <tr>
+    <td> <img src="BlockDiagram.png"  alt="Block Diagram" width = 572px height = 432px ></td>
+  </tr>
+</table>
+
+
+
+### Registers
+<table>
+  <tr>
+    <td> <img src="Registers.png"  alt="Registers" width = 516px height = 378px ></td>
+  </tr>
+</table>
+
+
+
+
+### Memory Map
+<table>
+  <tr>
+    <td> <img src="MemoryMap.png"  alt="Registers" width = 352px height = 428px ></td>
+  </tr>
+</table>
 
 ## Procedure
 For the pre-lab, we are going to recreate the BMI Calculator but this time we are going to include automation testing.
