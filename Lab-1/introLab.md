@@ -35,12 +35,6 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
         <li>Documentation available on the GitHub site</li>
     </td>
     <td> <img src="Nucleo.png"  alt="1" width = 279px height = 336px ></td>
-    <td>Just some text</td>
-   </tr> 
-   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
   </tr>
 </table>
 
