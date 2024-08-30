@@ -1,6 +1,6 @@
-## ENSE 352 - Software Testing and Validation - Laboratory
+## ENSE 352 - Fundamentals of Computer Systems Architectures - Laboratory
 
-# Lab 6: Widget Testing with Web / Mobile
+# Lab 1: Introduction to ARM and tools
 
 ### University of Regina
 ### Faculty of Engineering and Applied Science - Software Systems Engineering
@@ -9,11 +9,41 @@
 
 ## Introduction
 
-Flutter provides a robust testing framework that allows developers to automate and validate various aspects of their app's behavior, including unit testing, widget testing, and integration testing. Testing in Flutter not only helps catch bugs early in the development cycle but also promotes code quality and facilitates a smoother user experience.
-
-In this lab you will be introduced to Unit and Widget testing.
+Introduce the students to some of the ARM architecture. Begin using the lab tools. The students will create a project and write an assembly program based on a simulated target.
 
 ## Background
+
+### ARM Processor
+
+
+- The Cortex-M3 processor is a high performance 32-bit processor designed for the microcontroller market. 
+- Outstanding processing performance combined with fast interrupt handling
+- Enhanced system debug with extensive breakpoint and trace capabilities.
+- Efficient processor core, system and memories
+- Ultra-low power consumption with integrated sleep mode and an optional deep sleep mode.
+
+### Our Board - Nucleo-F103RB
+
+<table>
+  <tr>
+    <td>
+        <li>ARM 32 Bit Cortex-M3 Core</li>
+        <li>Contoller - STM32F103RB</li>
+        <li>72MHz Clock</li>
+        <li>128kB Flash</li>
+        <li>16kB SRAM</li>
+        <li>Documentation available on the GitHub site</li>
+    </td>
+    <td> <img src="Nucleo.png"  alt="1" width = 279px height = 336px ></td>
+    <td>Just some text</td>
+   </tr> 
+   <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+</table>
+
 
 ## Procedure
 For the pre-lab, we are going to recreate the BMI Calculator but this time we are going to include automation testing.
