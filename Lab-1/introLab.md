@@ -63,7 +63,7 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 ### Memory Map
 <table>
   <tr>
-    <td> <img src="MemoryMap.png"  alt="Registers" width = 352px height = 428px ></td>
+    <td> <img src="MemoryMap.png"  alt="Registers" width = 818px height = 1150px ></td>
   </tr>
 </table>
 
