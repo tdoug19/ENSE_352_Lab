@@ -53,7 +53,7 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 ### Registers
 <table>
   <tr>
-    <td> <img src="Registers.png"  alt="Registers" width = 516px height = 378px ></td>
+    <td> <img src="Registers.png"  alt="Registers" width = 600px height = 400px ></td>
   </tr>
 </table>
 
@@ -67,13 +67,38 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
   </tr>
 </table>
 
-## Procedure
-For the pre-lab, we are going to recreate the BMI Calculator but this time we are going to include automation testing.
+### Initial Code
 
-Let's start by setting up the project again:
+<details>
+<summary>expand startup.asm</summary>
 
-Paste this as your new main file...
+in `startup.asm`
 
+```assembly
+
+Code  Snippet
+
+;This initial location is the first location of Flash
+__Vectors	DCD	0x20002000		; stack pointer 
+            DCD	Reset_Handler		; reset vector
+     
+        ALIGN
+
+;My  program,  Linker requires Reset_Handler and it must be exported
+
+        AREA    MYCODE, CODE, READONLY
+        
+        ENTRY
+        EXPORT	Reset_Handler
+
+; First line of actual code
+Reset_Handler
+        MOV		R0, #0x76
+
+```
+
+
+</details>
 
 <details>
 <summary>expand main.dart</summary>
