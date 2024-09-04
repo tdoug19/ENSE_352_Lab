@@ -79,21 +79,21 @@ in `startup.asm`
 Code  Snippet
 
 ;This initial location is the first location of Flash
-__Vectors	DCD	0x20002000		; stack pointer 
+__Vectors   DCD	0x20002000		; stack pointer
             DCD	Reset_Handler		; reset vector
      
-        ALIGN
+    ALIGN
 
 ;My  program,  Linker requires Reset_Handler and it must be exported
 
-        AREA    MYCODE, CODE, READONLY
+    AREA    MYCODE, CODE, READONLY
         
-        ENTRY
-        EXPORT	Reset_Handler
+    ENTRY
+    EXPORT	Reset_Handler
 
 ; First line of actual code
 Reset_Handler
-        MOV		R0, #0x76
+    MOV		R0, #0x76
 
 ```
 
