@@ -58,8 +58,6 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 </table>
 
 
-
-
 ### Memory Map
 <table>
   <tr>
@@ -70,9 +68,9 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 ### Initial Code
 
 <details>
-<summary>expand startup.asm</summary>
+<summary>expand startup.s</summary>
 
-in `startup.asm`
+in `startup.s`
 
 ```assembly
 
@@ -96,32 +94,24 @@ Reset_Handler
     MOV		R0, #0x76
 
 ```
-
-
 </details>
 
-<details>
-<summary>expand main.dart</summary>
+#### Stack pointer
 
-in `main.dart`
+The Stack Pointer (SP) is register R13. 
 
-```dart
-import 'package:flutter/material.dart';
-import 'bmi.dart';
-
-void main() {
-   runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-    );
-  }
-}
+On reset, the processor loads the MSP with the value from address 0x00000000.
 
 
-```
+#### Program counter
 
-</details>
+The Program Counter (PC) is register R15. It contains the current program address. Bit[0] is always 0 because instruction fetches must be halfword aligned. On reset, the processor loads the PC with the value of the reset vector, which is at address 0x00000004.
+
+
+
+### Project Options
+<table>
+  <tr>
+    <td> <img src="ProjectOptions.png"  alt="Project Options" width = 520px height = 400px ></td>
+  </tr>
+</table>
