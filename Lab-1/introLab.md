@@ -162,6 +162,8 @@ label
 
 #### Things to Note
 - The x,y,z in Rx, Ry, Rz are placeholders!  You may use any general purpose registers.
+- Ox indicates a hexadecimal number.
+- '#' indicates an immediate value.
 - The MOV instruction copied data from register to register of from an immediate value.
 - LDR is termed pseudo instruction.  This loads a 32 bit value into any register.
 - Labes must be along the left margin and assembly code must be 1 tab in.
