@@ -80,7 +80,7 @@ Code  Snippet
 __Vectors   DCD	0x20002000		; stack pointer
             DCD	Reset_Handler		; reset vector
      
-    ALIGN
+    ALIGN ; Make the next code 32 bit aligned.
 
 ;My  program,  Linker requires Reset_Handler and it must be exported
 
@@ -162,5 +162,7 @@ label
 
 #### Things to Note
 - The x,y,z in Rx, Ry, Rz are placeholders!  You may use any general purpose registers.
-- 
+- The MOV instruction copied data from register to register of from an immediate value.
+- LDR is termed pseudo instruction.  This loads a 32 bit value into any register.
+- Labes must be along the left margin and assembly code must be 1 tab in.
 - Quick reference document available in the Resource folder on  URCourses.
