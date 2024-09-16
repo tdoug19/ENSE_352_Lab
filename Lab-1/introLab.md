@@ -65,6 +65,21 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
   </tr>
 </table>
 
+#### Stack pointer
+
+The Stack Pointer (SP) is register R13. 
+
+On reset, the processor loads the MSP with the value from address 0x00000000.
+
+
+#### Reset Vector
+
+The Stack Pointer (SP) is register R13. 
+
+On reset, the processor loads the MSP with the value from address 0x00000000.
+
+
+
 ### Initial Code
 
 <details>
@@ -112,12 +127,6 @@ Reset_Handler ;We only have one line of actual application code
 	END
 ```
 </details>
-
-#### Stack pointer
-
-The Stack Pointer (SP) is register R13. 
-
-On reset, the processor loads the MSP with the value from address 0x00000000.
 
 
 #### Program counter
