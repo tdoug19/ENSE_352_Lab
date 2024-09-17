@@ -61,24 +61,25 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 ### Memory Map
 <table>
   <tr>
-    <td> <img src="MemoryMap.png"  alt="Registers" width = 818px height = 1150px ></td>
+    <td> <img src="LowFlash.png"  alt="FlashIMage" width = 818px height = 1150px ></td>
   </tr>
 </table>
 
 #### Stack pointer
 
-The Stack Pointer (SP) is register R13. 
-
-On reset, the processor loads the MSP with the value from address 0x00000000.
+The Stack Pointer (SP) is register R13.  The stack is a region of RAM that is used for storing various information.  You can think of it like those yellow sticky notes you used to save notes or phone numbers on. On reset, the processor loads the SP with the value from address 0x00000000.
 
 
 #### Reset Vector
 
-The Stack Pointer (SP) is register R13. 
+When you apply power to or reset your processor, it always reads  offset address 0x00000004 to find where it should go to find the beginning of the program. 
+This is called the reset vector. Our Board has its FLASH memory  at address 0x08000000
 
-On reset, the processor loads the MSP with the value from address 0x00000000.
-
-
+<table>
+  <tr>
+    <td> <img src="MemoryMap.png"  alt="Registers" width = 818px height = 550px ></td>
+  </tr>
+</table>
 
 ### Initial Code
 
