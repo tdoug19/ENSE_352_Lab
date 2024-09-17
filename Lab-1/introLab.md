@@ -61,7 +61,7 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 ### Memory Map
 <table>
   <tr>
-    <td> <img src="LowFlash.png"  alt="FlashIMage" width = 818px height = 1150px ></td>
+    <td> <img src="MemoryMap.png"  alt="FlashIMage" width = 818px height = 1150px ></td>
   </tr>
 </table>
 
@@ -77,7 +77,7 @@ This is called the reset vector. Our Board has its FLASH memory  at address 0x08
 
 <table>
   <tr>
-    <td> <img src="MemoryMap.png"  alt="Registers" width = 818px height = 550px ></td>
+    <td> <img src="LowFlash.png"  alt="Registers" width = 650px height = 150px ></td>
   </tr>
 </table>
 
