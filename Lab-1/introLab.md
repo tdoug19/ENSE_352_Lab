@@ -77,7 +77,7 @@ This is called the reset vector. Our Board has its FLASH memory  at address 0x08
 
 <table>
   <tr>
-    <td> <img src="LowFlash.png"  alt="Registers" width = 650px height = 150px ></td>
+    <td> <img src="LowFlash.png"  alt="Registers" width = 650px height = 250px ></td>
   </tr>
 </table>
 
