@@ -49,7 +49,6 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 </table>
 
 
-
 ### Registers
 <table>
   <tr>
@@ -67,13 +66,14 @@ Introduce the students to some of the ARM architecture. Begin using the lab tool
 
 #### Stack pointer
 
-The Stack Pointer (SP) is register R13.  The stack is a region of RAM that is used for storing various information.  You can think of it like those yellow sticky notes you used to save notes or phone numbers on. On reset, the processor loads the SP with the value from address 0x00000000.
+Our Board has its FLASH memory  at address 0x08000000.
+
+The Stack Pointer (SP) is register R13.  The stack is a region of RAM that is used for storing various information.  You can think of it like those yellow sticky notes you used to save notes or phone numbers on. On reset, the processor loads the SP with the value from address 0x08000000.
 
 
-#### Reset Vector
+#### Program Counter
 
-When you apply power to or reset your processor, it always reads  offset address 0x00000004 to find where it should go to find the beginning of the program. 
-This is called the reset vector. Our Board has its FLASH memory  at address 0x08000000
+The Program Counter (PC) is register R15.  When you apply power to or reset your processor, it always reads  offset address 0x0x08000004 and puts the value it finds there into the PC.  This value MUST be a valid address pointing to the beginning of your code.
 
 <table>
   <tr>
