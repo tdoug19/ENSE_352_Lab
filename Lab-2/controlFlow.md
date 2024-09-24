@@ -190,3 +190,37 @@ String1
   ;R0 now contains the address for the string
 
   LDRB		R1,[R0]   ;This will load one byte of data ... An 'E' !
+
+```
+
+### Ascii Code
+
+Remember that when you are looking at characters or a string, they are represented by ASCII Code. So an ‘a’ is represented by 97 decimal or hexadecimal 0x61.
+
+<table>
+  <tr>
+    <td> <img src="AsciiTable.png"  alt="Ascii" width = 508px height = 451px ></td>
+  </tr>
+</table>
+
+So if we wanted to check if a certain character was in a register
+
+``` assembly
+  CMP		R1, #’a’
+  BEQ 		vowelDetected
+
+```
+And
+
+``` assembly
+
+  CMP		R1, #0x61
+  BEQ		vowelDetected
+
+```
+
+Are equivalent.
+
+
+## Assignment
+
