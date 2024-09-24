@@ -44,3 +44,53 @@ The two operations applicable to all stacks are:
   </tr>
 </table>
 
+### Looping example
+
+<details>
+<summary>expand loop.s</summary>
+
+in `loop.s`
+
+```assembly
+
+  MOV  R0, #0    ;initialize R0 as our counter
+
+  ;Start of the loop
+Start
+  
+  ; Stuff you may want to do in your loop
+
+  
+  ADD   R0, #1      ; Increment the counter
+  CMP   R0, #16     ; How many times to loop
+  BNE    Start      ; Loop back if not done
+
+
+  ;What about checking R0 being zero or not zero using the Z flag:
+
+
+  CBZ	R0, loopZero
+  ;; or
+  CBNZ	R0, loopNotZero
+
+```
+</details>
+
+### Link Register R14 and Subroutines
+
+The link register is used to store the return program counter  when a subroutine or function is called.  To Branch (or call) a subroutine using the Branch and update Link Register.
+
+```assembly
+  BL function   ; Branch to a subroutine and place the return address in the Link Register.
+                ; The Link Register will contain the address of the code after the Branch
+                ; instruction.
+
+
+
+function        ; This is the label or name of the subroutine.
+
+  BX LR         ; Branch back to the Link Register address.
+
+```
+
+
