@@ -353,6 +353,7 @@ vowelCount  PROC
 	END
 
 ```
+</details>
 
 ## Assignment
 
@@ -388,5 +389,5 @@ Now continue to build your program that has the following features:
 - Your program shall have a subroutine named countVowels.
 - Your program shall count both upper case and lower case vowels as the same vowel.
 
-### Submission
+## Submission
 Submit your *.s file to URCourses by your due date.  Be prepared to also demonstrate your submission.
