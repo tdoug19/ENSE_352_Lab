@@ -257,7 +257,7 @@ INITIAL_MSP	EQU		0x20001000	; Initial Main Stack Pointer Value	Allocating
 __Vectors	DCD		INITIAL_MSP			; stack pointer value when stack is empty
         	DCD		Reset_Handler		; reset vector
 	 		
-	ALIGN
+  ALIGN
 
 ;The program
 ; Linker requires Reset_Handler
@@ -269,7 +269,7 @@ __Vectors	DCD		INITIAL_MSP			; stack pointer value when stack is empty
 	ENTRY
 	EXPORT	Reset_Handler
 
-	ALIGN
+  ALIGN
 			
 Reset_Handler	PROC
                                 
@@ -305,7 +305,7 @@ Start
   ENDP         
 
 
-	ALIGN
+  ALIGN
 function1  PROC
 
 	;; This is the guts of the subroutine
@@ -316,7 +316,7 @@ function1  PROC
 
 
 
-	ALIGN
+  ALIGN
 function2	PROC  ;Using this PROC and ENDP like curly braces 
   PUSH 	{R1,LR}	  
   MOV		R1,#4
@@ -329,14 +329,14 @@ delay
   
   ENDP
 
-	ALIGN
+  ALIGN
 string1
 		DCB		"ENSE 352 is fun and I am learning ARM assembly!",0
 
 
 ;Input : R0  - This contains the address of the beginning of a char array
 
-	ALIGN
+  ALIGN
 vowelCount  PROC
   PUSH {R1}
   LDRB	R1,[R0]
