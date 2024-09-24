@@ -91,6 +91,102 @@ function        ; This is the label or name of the subroutine.
 
   BX LR         ; Branch back to the Link Register address.
 
+
+  ;Another alternative to a subroutine call
+
+  ALIGN   ; Make sure we are on a 32 bit boundary
+
+Delay	PROC            ; Delay is the name of the subroutine
+  
+  push	{R1,LR}   	  ; Push R1 and LR onto the stack
+  MOV 	R1,#4         ; Initialize a counter
+
+delay_loop            ; This is a loop ... NOT a SUBROUTINE
+  
+  subs	R1, #1        ; Decrement the counter
+  bne	delay_loop
+  
+  pop	{R1,PC}	        ; I am dond, Pop off the stack into R1 and PC 
+                      ; (PC will get the LR)
+      
+  ENDP                ; End the procedure
+
+
 ```
 
+### My favorite way to call and write subroutines
 
+``` assembly
+
+  ;Call the routine like this
+  BL  Delay
+
+
+
+  ALIGN
+
+Delay	PROC           ;Delay is the name of the subroutine
+  
+  MOV 	R1,#4
+delay_loop
+  SUBS	R1, #1
+  BNE	delay_loop
+  
+  BX  LR	
+      
+  ENDP
+
+```
+
+### Creating C Strings
+
+This type of format will construct a C string and null terminate.  This means you can tell when the string ends.
+
+``` assembly
+
+String1                         ; This is the label of the string in memory.
+  DCB	"ENSE 352 is fun!!!“,0    ; Dedicate some data nad NULL terminate.
+
+```
+
+Place this String Directive somewhere in your code that your PC will not address. In order to  access this string we can load the memory address where it is stored like so:
+
+``` assembly
+  LDR		R0, = String1   ;R0 now contains the address for the string
+
+```
+
+### Memory Access Instructions
+
+How to transfer data from memory into a register.
+
+
+_op{type}{cond} Rt, [Rn {, #offset}]_ ; Immediate offset
+
+where:
+- ‘op’ is either LDR (load register) or STR (store register)
+- ‘type’ is one of the following:
+- B: Unsigned byte, zero extends to 32 bits on loads
+- SB: Signed byte, sign extends to 32 bits (LDR only)
+- H: Unsigned halfword, zero extends to 32 bits on loads
+- SH: Signed halfword, sign extends to 32 bits (LDR only)
+- ‘cond’ is an optional condition code (see Conditional execution on page 58)
+- ‘Rt’ is the register to load or store
+- ‘Rn’ is the register on which the memory address is based‘offset’ is an offset from Rn. If offset is omitted, the address is the contents of Rn
+
+
+### Memory Access Instructions code
+
+How to transfer on byte of data from memory into a register.
+
+``` assembly 
+String1
+  DCB	"ENSE 352 is fun!!!“,0   ;  This 0 indicates null terminate
+
+  ;In order to  access this string we can load the memory address where it is stored like so:
+
+  LDR		R0, = String1
+
+  ;R0 now contains the address for the string
+
+  LDRB		R1,[R0]   ;This will load one byte of data ... An 'E' !
