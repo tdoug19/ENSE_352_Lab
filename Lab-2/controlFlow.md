@@ -297,7 +297,7 @@ Start
 		
   BL function2
 
-	LDR		R0, = string1       ;Loading the address of string1 into the R0 address
+  LDR		R0, = string1       ;Loading the address of string1 into the R0 address
 		
   BL  vowelCount
 		
