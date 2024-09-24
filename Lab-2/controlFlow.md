@@ -266,8 +266,8 @@ __Vectors	DCD		INITIAL_MSP			; stack pointer value when stack is empty
 
 
 
-	ENTRY
-	EXPORT	Reset_Handler
+  ENTRY
+  EXPORT	Reset_Handler
 
   ALIGN
 			
@@ -312,26 +312,26 @@ function1  PROC
 		
   BX LR
 
-	ENDP
+  ENDP
 
 
 
   ALIGN
 function2	PROC  ;Using this PROC and ENDP like curly braces 
   PUSH 	{R1,LR}	  
-  MOV		R1,#4
+  MOV   R1,#4
 		
 delay
   SUBS	R1, #1
-  BNE		delay
+  BNE	  delay
 
-  POP		{R1,PC}
+  POP {R1,PC}
   
   ENDP
 
   ALIGN
 string1
-		DCB		"ENSE 352 is fun and I am learning ARM assembly!",0
+	  DCB		"ENSE 352 is fun and I am learning ARM assembly!",0
 
 
 ;Input : R0  - This contains the address of the beginning of a char array
@@ -347,7 +347,7 @@ vowelCount  PROC
 
   ENDP
 
-	END
+  END
 
 ```
 </details>
