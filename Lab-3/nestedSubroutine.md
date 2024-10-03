@@ -14,14 +14,9 @@ The objective of this lab is to introduce the students to nested subroutines and
 
 ## Procedure
 
-We have been introduced to a number of new assembly instructions:
-
-- BL - Branch with Link (Call a subroutine) and store the return address in the LR 2. B - Branch
-- BX LR - Return from a subroutine.
-- PUSH Reg.. - Push multiple Registers to the stack
-- POP Reg.. - Pop multiple Registers from the stack.
-- LDR Rt, label - Load register from memory LDR, PC-relative
-
+We know how to call a subroutine and how to return from a subroutine with the following:
+- BL  Branch with Link (Call a subroutine) and store the return address in the LR.
+- BX LR Branch pack to where the LR is pointing.
 
 ### Phase 1
 Write a subroutine that supports the following features.
