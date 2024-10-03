@@ -12,11 +12,13 @@
 The objective of this lab is to introduce the students to nested subroutines and bit manipulations using the ARM assembly instruction set.
 
 
-## Procedure
+## Background
 
 We know how to call a subroutine and how to return from a subroutine with the following:
 - BL  Branch with Link (Call a subroutine) and store the return address in the LR.
 - BX LR Branch pack to where the LR is pointing.
+
+## Procedure
 
 ### Phase 1
 Write a subroutine that supports the following features.
