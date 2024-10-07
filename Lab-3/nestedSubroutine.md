@@ -17,7 +17,8 @@ The objective of this lab is to introduce the students to nested subroutines and
 We know how to call a subroutine and how to return from a subroutine with the following:
 - BL  Branch with Link (Call a subroutine) and store the return address in the LR.
 - BX LR Branch pack to where the LR is pointing.
-
+What happens if we are in a subroutine and need to call another subroutine whithin this one?  What will happen to the Link Register.  There is an example in this repository to download and run to see how to handle this situation.
+ 
 ## Procedure
 
 ### Phase 1
