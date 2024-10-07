@@ -39,3 +39,7 @@ of the input register shall be unchanged by the function.
 - For example, if you call your function with an input register =0x12345678 and the rotate amount in the second register =1 in bits 3:0 and the bit 5 = 1, the result in the original register will be rotated left by 1 bit: input register is =0x1234ACF0.
 If the user provides a rotate value of 0, then the function should return the original
 integer unchanged.
+
+
+## Submission
+Submit your *.s code to URCourses and be prepared to demonstrate your solution.
