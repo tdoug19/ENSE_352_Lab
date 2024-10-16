@@ -30,7 +30,17 @@ In order to write to these registers you must know the address(where they live i
   </tr>
 </table>
 
-Notice from the schematic that the LED and Switch are located on certain Port pins.  In order to 
+Notice from the above schematic that the USER Blue Switch is located on PC 13.  Look at the circuit that is connected to this pin.  How will the current flow when the switch is pressed?  Take note of this pin.
+
+<table>
+  <tr>
+    <td> <img src="Schematic2.png"  alt="Schematic 2" width = 1099px height = 564px ></td>
+  </tr>
+</table>
+
+
+
+LED and Switch are located on certain Port pins.  In order to 
 use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC\textunderscore APB2ENR)  in the Reference Manual. 
 
 Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx\textunderscore CRL.  Notice that we need to configure
