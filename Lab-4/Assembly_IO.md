@@ -37,11 +37,19 @@ Notice from the above schematic that the USER Blue Switch is located on PC 13.  
     <td> <img src="Schematic2.png"  alt="Schematic 2" width = 1099px height = 564px ></td>
   </tr>
 </table>
+Notice from the above schematic that the Green LED is located on PA 5.  Look at the circuit that is connected to this pin.  How will the current flow here? Take note of this pin.
 
 
+### Discovering Peripheral Addresses
 
-LED and Switch are located on certain Port pins.  In order to 
-use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC\textunderscore APB2ENR)  in the Reference Manual. 
+Peripheral Addresses are given a Boundary Address and an offset. This allows peripherals to be moved to different Boundary locations and their documentation and code templates do not have to change that often.
+
+From our documentation:
+
+
+### Port pins
+
+In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual. 
 
 Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx\textunderscore CRL.  Notice that we need to configure
 Port A pin 5 as output, max speed 50MHz, general purpose output push-pull.  Notice that the CNF and MODE bits (4 bits in total) configure one I/O line.
