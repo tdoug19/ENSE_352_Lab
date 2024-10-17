@@ -44,7 +44,7 @@ Notice from the above schematic that the Green LED is located on PA 5.  Look at 
 
 Peripheral Addresses are given a Boundary Address and an offset. This allows peripherals to be moved to different Boundary locations and their documentation and code templates do not have to change that often.
 
-From our documentation:
+From our STM32F10xxRefMaual-2.pdf documentation:
 
 <table>
   <tr>
@@ -57,6 +57,17 @@ From our documentation:
     <td> <img src="GPIORegisterMap.png"  alt="GPIO Register Map" width = 1068px height = 838px ></td>
   </tr>
 </table>
+
+To Calculate the physical address you would add the boundary address + the offset.
+
+So, now we have some information.  We know:
+- Our LED is on PA 5.  That is Port A pin 5.
+- Our blue button is on PC 13.  That is Port C pin 13.
+- We know how to address the Port addresses that control our port
+
+
+![Money](Money.png)
+
 
 ### Port pins
 
