@@ -63,15 +63,16 @@ To Calculate the physical address you would add the boundary address + the offse
 So, now we have some information.  We know:
 - Our LED is on PA 5.  That is Port A pin 5.
 - Our blue button is on PC 13.  That is Port C pin 13.
-- We know how to address the Port addresses that control our port
-
+- We know how to derive the addresses for the Ports we care about.
+- From previous labs we know how to set and clear bits in registers.
 
 ![Money](Money.png)
+In order to make the money we need to understand what registers to use and what bits we need to write to these registers.  Now we have to read the documentation.
 
 
 ### Port pins
 
-In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual. 
+Earlier in the semester we discussed one of the benefits of the ARM architecture and the STM32F103B mincrocontroller is the ability to dynamically control power to the peripherals.  In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual. 
 
 Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx\textunderscore CRL.  Notice that we need to configure
 Port A pin 5 as output, max speed 50MHz, general purpose output push-pull.  Notice that the CNF and MODE bits (4 bits in total) configure one I/O line.
