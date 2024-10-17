@@ -46,6 +46,14 @@ Peripheral Addresses are given a Boundary Address and an offset. This allows per
 
 From our documentation:
 
+<table>
+  <tr>
+    <td> <img src="RegisterAddresses.png"  alt="Register Addresses" width = 1051px height = 634px ></td>
+  </tr>
+  <tr>
+    <td> <img src="GPIORegisterMap.png"  alt="GPIO Register Map" width = 1068px height = 838px ></td>
+  </tr>
+</table>
 
 ### Port pins
 
