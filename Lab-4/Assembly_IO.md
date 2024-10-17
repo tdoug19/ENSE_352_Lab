@@ -51,6 +51,9 @@ From our documentation:
     <td> <img src="RegisterAddresses.png"  alt="Register Addresses" width = 1051px height = 634px ></td>
   </tr>
   <tr>
+    <td> <img src="RegisterAddresses2.png"  alt="Register Addresses Part 2" width = 1058px height = 891px ></td>
+  </tr>
+  <tr>
     <td> <img src="GPIORegisterMap.png"  alt="GPIO Register Map" width = 1068px height = 838px ></td>
   </tr>
 </table>
