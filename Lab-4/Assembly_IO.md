@@ -60,6 +60,37 @@ From our STM32F10xxRefMaual-2.pdf documentation:
 
 To Calculate the physical address you would add the boundary address + the offset.
 
+Here is some sample code to read and write to external registers.
+
+``` assembly
+
+;; How to Access (R/W) an external register
+
+INITIAL_MSP	EQU	0x20001000	    ; Initial Main Stack Pointer Value
+RCC_APB2ENR	EQU	0x40021018	    ; APB2 Peripheral Clock Enable Register
+GPIOC_CRH	EQU	0x40011004    ;  Port Configuration Register for Px15 -> Px8
+
+
+Ex : Writing to a register
+LDR	R6, = RCC_APB2ENR	; R6 will contain the address of the register
+MOV	R0, #0x001C	; Set these bits for whatever reason
+STR	R0, [R6]
+
+
+
+Ex: Reading from a register and storing it  into an ARM register (R0)
+LDR	R6, = GPIOC_CRH	    ; CRH determines gpio pins 8-15
+LDR	R0,[R6]
+
+
+Ex : Writing to a register without affecting bits I do not care about
+LDR	R6, = RCC_APB2ENR	; R6 will contain the address of the register
+LDR	R0,[R6]
+ORR	R0, #0x001C	; Set these bits for whatever reason
+STR	R0, [R6]
+
+```
+
 So, now we have some information.  We know:
 - Our LED is on PA 5.  That is Port A pin 5.
 - Our blue button is on PC 13.  That is Port C pin 13.
@@ -67,19 +98,26 @@ So, now we have some information.  We know:
 - From previous labs we know how to set and clear bits in registers.
 
 ![Money](Money.png)
-In order to make the money we need to understand what registers to use and what bits we need to write to these registers.  Now we have to read the documentation.
+In order to make the money we need to understand what registers to use and what bits we need to write to these registers.  Now we have to read the documentation!!!  However, since this is your first time doing this I will help you by indicating what external registers you should use.
 
 
 ### Port pins
 
-Earlier in the semester we discussed one of the benefits of the ARM architecture and the STM32F103B mincrocontroller is the ability to dynamically control power to the peripherals.  In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual. 
+Earlier in the semester we discussed one of the benefits of the ARM architecture and the STM32F103B mincrocontroller is the ability to dynamically control power to the peripherals.  In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual to do this. 
 
-Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx\textunderscore CRL.  Notice that we need to configure
-Port A pin 5 as output, max speed 50MHz, general purpose output push-pull.  Notice that the CNF and MODE bits (4 bits in total) configure one I/O line.
+Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx_CRL. (Notice GPIO_x_CRH also).
 
-PORT C pin 13 is connected to the blue button switch.  Look at  GPIOx\textunderscore CRH and configure the MODE bits to input and the CNF bits to floating input. 
+<table>
+  <tr>
+    <td> <img src="PortConfigurationRegisterLow.png"  alt="Port Configuration Register Low" width = 1069px height = 942px ></td>
+  </tr>
+</table>
 
-Now that our port pins are configured, use GPIOx\textunderscore ODR to change the state of our output I/O pins and use GPIOx\textunderscore IDR to determine the state of our input I/O lines.
+Notice that we need to configure Port A pin 5 as output, max speed 50MHz, general purpose output push-pull.  Notice that the CNF and MODE bits (4 bits in total) configure one I/O line.
+
+PORT C pin 13 is connected to the blue button switch.  Look at  GPIOx_CRH and configure the MODE bits to input and the CNF bits to floating input. 
+
+Now that our port pins are configured, use GPIOx_ODR to change the state of our output I/O pins and use GPIOx_IDR to determine the state of our input I/O lines.
 
 
 ## Procedure
