@@ -103,7 +103,7 @@ In order to make the money we need to understand what registers to use and what 
 
 ### Port pins
 
-Earlier in the semester we discussed one of the benefits of the ARM architecture and the STM32F103B mincrocontroller is the ability to dynamically control power to the peripherals.  In order to use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual to do this. 
+Earlier in the semester we discussed one of the benefits of the ARM architecture and the STM32F103B microcontroller is the ability to dynamically control power to the peripherals.  To use these I/O lines you will need to first turn on the clocks for PORT A and PORT C.  Investigate the  APB2 peripheral clock enable register (RCC__APB2ENR)  in the Reference Manual RM0008-rev21.pdf to do this. 
 
 Now that you are providing a clocking source to your I/O lines you must configure the lines to support what is connected to them.  Look at GPIOx_CRL. (Notice GPIO_x_CRH also).
 
