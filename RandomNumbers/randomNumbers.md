@@ -69,7 +69,7 @@ int main(int argc, char **argv){
 So ***time()*** will give us some different value every time we run.  Another solution to this problem, expecially if you are writing Assembly, is to utilize the opening sequence of our game to return some random value.  To do this, increment a value while waiting for the user to press a button.
 
 
-## RAND_MAX
+### RAND_MAX
 As mentioned RAND_MAX is between 0 and  2<sup>31</sup> -1 .  We only need a number between 0 and three.  One way to do this:
 
 ```C
