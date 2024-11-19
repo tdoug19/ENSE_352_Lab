@@ -96,3 +96,5 @@ int randomNumberTo4()
  
     return r % NUMBER_OF_LEDS;
 }
+
+Reference -- https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Randomization.html
