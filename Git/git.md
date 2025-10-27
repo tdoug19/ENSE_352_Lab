@@ -72,11 +72,6 @@ Make sure you have:
 
 - [Git installed](https://git-scm.com/downloads)
 - A [GitHub account](https://github.com)
-- Your name and email configured in Git (only needed once):
-  ```bash
-  git config --global user.name "Your Name"
-  git config --global user.email "your@email.com"
-  ```
 
 ## 🗂️ 3. Create a Local Project Folder
 
@@ -86,6 +81,9 @@ In your terminal (or PowerShell on Windows) (or Cygwin in Windows)
 mkdir my-project
 cd my-project
 git init
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"  
+
 ```
 
 ✅ This creates an empty Git repository (a hidden `.git` folder).
@@ -146,7 +144,7 @@ git help <command>
 
 ## 📝 4. Add a File and Commit It
 
-Create a new "README.txt" file and commit it.  Use Explorer or the command line, just make sure it is in the root of your repositoy:
+Create a new "README.txt" file.  Use Explorer or the command line, just make sure it is in the root of your repository:
 
 ✅ Now Show the status of the repository.
 
@@ -154,7 +152,7 @@ Create a new "README.txt" file and commit it.  Use Explorer or the command line,
 git status
 ```
 
-## 🔄 Git Workflow: Adding, Staging, and Committing
+### 🔄 Git Workflow: Adding, Staging, and Committing
 
 Understanding the Git workflow is key to using version control effectively.  
 Git works in **three main areas**:  
@@ -164,7 +162,7 @@ Git works in **three main areas**:
 
 ---
 
-### 🧱 1. Working Directory
+#### 🧱 1. Working Directory
 
 This is where you **edit your files** — the actual folder on your computer.  
 When you make changes, Git **notices** them but **doesn’t track** them automatically.
@@ -177,33 +175,9 @@ You can see what changed using:
 ```bash
 git status
 ```
-
-## ⚙️ Typical Git Workflow
-
-Here’s what a normal Git workflow looks like:
-
-1. **Edit files** in your working directory.  
-2. **Stage** the files you want to commit.  
-   ```bash
-   git add .
-   ```
-3. **Commit** the staged files to your local repository.  
-   ```bash
-   git commit -m "Added new feature"
-   ```
-4. **Push** your commits to a remote repository (like GitHub).  Notice that you can do 
-   multiple commits before pushing to a remote.   (More about remotes later on..)
-   ```bash
-   git push
-   ```
-5. **Two steps** in one.  I like to stage and commit in the same line.
-   ```bash
-   git commmit -am "Added a new feature"
-   ```
-
 ---
 
-## 📦 2. Staging Area
+#### 📦 2. Staging Area
 
 The **staging area** (also called the **index**) is where you tell Git **which files** you want to include in your next commit.
 
@@ -220,7 +194,7 @@ Think of it like packing items into a box before sealing it — the box is the *
 
 ---
 
-## 📝 3. Repository (Local Repo)
+#### 📝 3. Repository (Local Repo)
 
 When you’re happy with the staged changes, you “seal the box” by committing them to your **local Git repository**.
 
@@ -231,6 +205,11 @@ git commit -m "Describe what you changed"
 
 This creates a **snapshot** of your project — a permanent version you can always return to.
 
+
+You can stage and commit in one step:
+```bash
+git commit -am "Describe what you changed"
+```
 ---
 
 ## ✅ 4. Exercise
@@ -244,7 +223,7 @@ The `git diff` command shows **differences** between file versions in your Git r
 It’s one of the most useful commands for reviewing what changed before you commit.
 
 
-## 🧩 1. Check Unstaged Changes
+### 🧩 1. Check Unstaged Changes
 
 Use this to see what you changed **since the last commit**, but **not yet added** with `git add`.
 
@@ -266,12 +245,12 @@ git diff
 
 GitHub will show you a page like this (keep it open!):
 
-```
+```bash
 git remote add origin https://github.com/yourusername/my-project.git
 git branch -M main
 git push -u origin main
-```
 
+```
 ---
 
 ## 🔗 7. Connect Local Repo to Remote
@@ -297,12 +276,13 @@ git remote -v
 
 Expected output:
 
-```
+```bash
 origin  https://github.com/yourusername/my-project.git (fetch)
 origin  https://github.com/yourusername/my-project.git (push)
 ```
 
-Now refresh your GitHub repository page — your README should appear 🎉  
+Now refresh your GitHub repository page — your README and any other files you have 
+created should appear 🎉  
 
 
 ## 🏗️ 9. Clone a Repository (HTTPS)
@@ -315,9 +295,8 @@ git clone https://github.com/username/repo-name.git
 ✅ Git will create a new folder named repo-name with all the repository files and full history.
 
 ---
-## ✅ 10. Files You *Should* Track
 
-### 🗂️ What File Types Should Go Under Revision Control (Git)
+## 🗂️ 10. What File Types Should Go Under Revision Control (Git)
 
 Not every file in your project should be tracked by Git.  
 You only want to version **source files and important configuration files**, not temporary or generated files.
@@ -349,7 +328,6 @@ These define the structure or layout of your app or website.
 A quick reference for everyday Git usage.
 
 ---
-
 #### 🔧 Setup & Configuration
 
 | Command | Description |
@@ -449,8 +427,3 @@ A quick reference for everyday Git usage.
 
 ---
 
-## 💡 Tip
-
-You can use:
-```bash
-git help <command>
