@@ -341,6 +341,7 @@ These define the structure or layout of your app or website.
 - Merging
 - Forking
 - Pull requests
+- Working in Group Projects (Demo on Board)
 
  
 ### 🧰 Common Git Commands and Their Meanings
